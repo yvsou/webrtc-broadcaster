@@ -28,7 +28,7 @@ const REPORT_ONLINE = 'REPORT_ONLINE';
 
 var handleofferflag = 0;
 var hasmediasourcefalg = 0;
-var retransnumpernode = 0; // 3;
+var retransnumpernode = 1;  
 var castertransnumpernode = 5;
 
 var myUsername = null;
@@ -69,7 +69,7 @@ const displayMediaOptions = {
  
 const iceConfig = {"iceServers": [
         {
-          url:"turn:119.37.197.38:3478", username:"yvsou", credential:"icitel2020" ,
+          url:"turn:turserver", username:"youraccount", credential:"yourpassword" ,
        
         }
             
@@ -756,10 +756,10 @@ async function HnadleJoinBcast(msg) {
        return;   
    var arr = Object.keys(peerConnections); 
    if ( broadcaster ==1){
-       if ( arr.length >castertransnumpernode ) 
+       if ( arr.length >= castertransnumpernode ) 
             return;
    }else {   
-   if (arr.length > retransnumpernode ) 
+   if (arr.length >= retransnumpernode ) 
       return;
   } 
   // if ( broadcaster !=1)
